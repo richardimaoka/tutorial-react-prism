@@ -1,25 +1,26 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Prism from "prismjs";
 
 function App() {
+  const codeString = `class Main {
+  public static void main(String[] args) {
+
+    int base = 3, exponent = 4;
+
+    long result = 1;
+
+    while (exponent != 0) {
+      result *= base;
+      --exponent;
+    }
+
+    System.out.println("Answer = " + result);
+  }
+}`;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <pre>
+        <code>{codeString}</code>
+      </pre>
     </div>
   );
 }
