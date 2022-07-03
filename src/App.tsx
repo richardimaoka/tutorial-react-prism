@@ -1,6 +1,11 @@
 import "./App.css";
+import Prism from "prismjs";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   const codeString = `class Main {
   public static void main(String[] args) {
 
@@ -18,7 +23,7 @@ function App() {
 }`;
   return (
     <div>
-      <pre>
+      <pre className="language-java">
         <code>{codeString}</code>
       </pre>
     </div>
