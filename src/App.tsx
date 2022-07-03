@@ -1,10 +1,13 @@
 import "./App.css";
 import Prism from "prismjs";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function App() {
+  const ref = useRef<HTMLElement>(null);
   useEffect(() => {
-    Prism.highlightAll();
+    if (ref.current) {
+      Prism.highlightElement(ref.current);
+    }
   }, []);
   const codeString = `class Main {
   public static void main(String[] args) {
@@ -24,7 +27,7 @@ function App() {
   return (
     <div>
       <pre className="language-java">
-        <code>{codeString}</code>
+        <code ref={ref}>{codeString}</code>
       </pre>
     </div>
   );
