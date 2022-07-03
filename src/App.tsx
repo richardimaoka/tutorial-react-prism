@@ -9,24 +9,24 @@ function App() {
       Prism.highlightElement(ref.current);
     }
   }, []);
-  const codeString = `class Main {
-  public static void main(String[] args) {
+  const codeString = `import React, { useState } from 'react';
 
-    int base = 3, exponent = 4;
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
 
-    long result = 1;
-
-    while (exponent != 0) {
-      result *= base;
-      --exponent;
-    }
-
-    System.out.println("Answer = " + result);
-  }
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
 }`;
   return (
     <div>
-      <pre className="language-java">
+      <pre className="language-javascript">
         <code ref={ref}>{codeString}</code>
       </pre>
     </div>
