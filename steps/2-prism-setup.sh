@@ -13,7 +13,7 @@ git apply patches/***********.patch # <pre><code>でソースコードを表示
 
 # :white_check_mark: Result: 以下のように表示されればOKです
 
-# ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/ffe58180-312b-eb56-e4d3-65daa8e5d9db.png)
+# ![2022-07-20_09h11_44.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/07f77b7b-35b3-c4f6-89a5-d0ed49892101.png)
 
 # ソースコードが白黒で表示されたので、次はprism.jsを使って色をつけていきます。
 
@@ -21,11 +21,6 @@ git apply patches/***********.patch # <pre><code>でソースコードを表示
 
 # ```shell
 (cd && npm install prismjs)
-# ```
-
-# :large_orange_diamond: Action: 以下のコマンドを入力してください。
-
-# ```shell
 git apply patches/***********.patch # import prism.js + 空のuseEffect
 # ```
 
@@ -39,7 +34,7 @@ git apply patches/***********.patch # import prism.js + 空のuseEffect
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-npm install @types/prismjs
+npm install --save-dev @types/prismjs
 # ```
 
 # :white_check_mark: Result: エラーは解消されました
