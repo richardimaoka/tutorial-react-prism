@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@types/prismjs": "^1.26.0"
+    "@types/prismjs": "^1.26.0",
+    "babel-plugin-prismjs": "^2.1.0"
   }
 }
