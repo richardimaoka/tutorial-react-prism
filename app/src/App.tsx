@@ -1,6 +1,5 @@
 import Prism from "prismjs";
 import { useEffect, useRef } from "react";
-import "prismjs/themes/prism-twilight.css";
 
 function App() {
   const codeString = `import React from "react";
