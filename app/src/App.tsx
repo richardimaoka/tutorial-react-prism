@@ -1,3 +1,6 @@
+import Prism from "prismjs";
+import { useEffect, useRef } from "react";
+
 function App() {
   const codeString = `import React from "react";
 import ReactDOM from "react-dom/client";
@@ -19,9 +22,17 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 `;
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (ref.current) {
+      Prism.highlightElement(ref.current);
+    }
+  }, []);
   return (
     <pre>
-      <code>{codeString}</code>
+      <code className="language-js" ref={ref}>
+        {codeString}
+      </code>
     </pre>
   );
 }
