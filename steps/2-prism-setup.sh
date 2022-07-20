@@ -21,12 +21,20 @@ git apply patches/***********.patch # <pre><code>でソースコードを表示
 
 # ```shell
 (cd && npm install prismjs)
-git apply patches/***********.patch # import prism.js + 空のuseEffect
+git apply patches/***********.patch # highlightElement + useRef
 # ```
+
+# <details><summary>highlightElement vs. highlightAll</summary><div>
+
+# ---
+
+# </div></details>
 
 # :white_check_mark: Result: 以下のようなエラーが表示されます。
 
 # ```shell
+# Could not find a declaration file for module 'prismjs'. 'tutorial-react-prismjs/app/node_modules/prismjs/prism.js' implicitly has an 'any' type.
+# Try `npm i --save-dev @types/prismjs` if it exists or add a new declaration (.d.ts) file containing `declare module 'prismjs';`ts(7016)
 # ```
 
 # このエラーを解決しましょう。
@@ -40,17 +48,6 @@ npm install --save-dev @types/prismjs
 # :white_check_mark: Result: エラーは解消されました
 
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
-
-# ```shell
-git apply patches/***********.patch # highlightElement + useRef
-# ```
-
-# <details><summary>highlightElement vs. highlightAll</summary><div>
-
-# ---
-
-# </div></details>
-
 
 # :white_check_mark: Result: ハイライトされません。
 
