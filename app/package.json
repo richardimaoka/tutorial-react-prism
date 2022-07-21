@@ -93,6 +93,21 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "javascript"
+          ],
+          "plugins": [
+            "line-numbers"
+          ],
+          "theme": "twilight",
+          "css": true
+        }
+      ]
     ]
   },
   "jest": {
