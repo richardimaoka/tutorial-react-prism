@@ -33,7 +33,7 @@ git apply patches/***********.patch # highlightElement + useRef
 # import { useEffect, useRef } from "react";
 
 # function App() {
-#   const codeString = `import React from "react";...`;
+#   const codeString = `...` //JavaScript code string
 
 #   const ref = useRef<HTMLElement>(null);
 #   useEffect(() => {
@@ -64,12 +64,12 @@ git apply patches/***********.patch # highlightElement + useRef
 
 # </div></details>
 
-# :white_check_mark: Result: 以下のようなエラーが表示されます。
+# :white_check_mark: Result: `import Prism from "prismjs"` の部分で以下のようなエラーが表示されます。
 
 # > Could not find a declaration file for module 'prismjs'. 'tutorial-react-prismjs/app/node_modules/prismjs/prism.js' implicitly has an 'any' type.
 # > Try `npm i --save-dev @types/prismjs` if it exists or add a new declaration (.d.ts) file containing `declare module 'prismjs';`ts(7016)
 
-# このエラーを解決しましょう。
+# このエラーを解消しましょう。
 
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
@@ -77,11 +77,7 @@ git apply patches/***********.patch # highlightElement + useRef
 npm install --save-dev @types/prismjs
 # ```
 
-# :white_check_mark: Result: エラーは解消されました
-
-# :large_orange_diamond: Action: 以下のコマンドを入力してください。
-
-# :white_check_mark: Result: ハイライトされません。
+# :white_check_mark: Result: エラーは解消されました。しかし、コードはまだsyntax highlightされません。
 
 # ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/ffe58180-312b-eb56-e4d3-65daa8e5d9db.png)
 
