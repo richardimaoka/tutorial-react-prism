@@ -5,6 +5,8 @@ cd ../ || exit               # REMOVE THIS IN aggregate.sh - cd to the git repos
 
 # ## 2. prism.js セットアップ
 
+# まずはprism.jsを入れない状態でソースコードを表示しましょう。
+
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
@@ -20,22 +22,52 @@ git apply patches/***********.patch # <pre><code>でソースコードを表示
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-(cd && npm install prismjs)
+(cd app && npm install prismjs)
 git apply patches/***********.patch # highlightElement + useRef
+# ```
+
+# :white_check_mark: Result: App.tsxが以下のようになります。
+
+# ```tsx
+# import Prism from "prismjs";
+# import { useEffect, useRef } from "react";
+
+# function App() {
+#   const codeString = `import React from "react";...`;
+
+#   const ref = useRef<HTMLElement>(null);
+#   useEffect(() => {
+#     if (ref.current) {
+#       Prism.highlightElement(ref.current);
+#     }
+#   }, []);
+#   return (
+#     <pre>
+#       <code className="language-js" ref={ref}>
+#         {codeString}
+#       </code>
+#     </pre>
+#   );
+# }
+
+# export default App;
 # ```
 
 # <details><summary>highlightElement vs. highlightAll</summary><div>
 
+# prism.jsには [highlightElement](https://prismjs.com/docs/Prism.html#.highlightElement) 以外にも [highlightAll](https://prismjs.com/docs/Prism.html#.highlightAll) というAPI functionもあります。
+# highlightAllはその名の通りHTML document内のすべての `class="language-xxx"` となっている要素に対して highlightElement 呼び出すのと同等です。Reactを使わない静的なWebページであれば、document全体に対してhighlightAllを呼び出すほうが楽でわかりやすいでしょう。
+# highlightElementは、一つの要素を対象にsyntax highlightを行います。本記事でhighlightElement利用したのは、Reactらしくコンポーネント内でのuseEffectの影響をコンポーネント内に閉じておきたかったからです。
+# 
+# 
 # ---
 
 # </div></details>
 
 # :white_check_mark: Result: 以下のようなエラーが表示されます。
 
-# ```shell
-# Could not find a declaration file for module 'prismjs'. 'tutorial-react-prismjs/app/node_modules/prismjs/prism.js' implicitly has an 'any' type.
-# Try `npm i --save-dev @types/prismjs` if it exists or add a new declaration (.d.ts) file containing `declare module 'prismjs';`ts(7016)
-# ```
+# > Could not find a declaration file for module 'prismjs'. 'tutorial-react-prismjs/app/node_modules/prismjs/prism.js' implicitly has an 'any' type.
+# > Try `npm i --save-dev @types/prismjs` if it exists or add a new declaration (.d.ts) file containing `declare module 'prismjs';`ts(7016)
 
 # このエラーを解決しましょう。
 
@@ -56,8 +88,7 @@ npm install --save-dev @types/prismjs
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-npm install babel-plugin-prismjs
-git apply patches/***********.patch # babel plugin in package.json
+git apply patches/***********.patch # import "prismjs/themes/prism-twilight.css"
 # ```
 
 # :white_check_mark: Result: 以下のように表示されればOKです
