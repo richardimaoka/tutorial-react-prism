@@ -36,7 +36,7 @@ npm start
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-git apply patches/***********.patch # empty application
+git apply patches/a12551c.patch # empty application
 # ```
 
 # :white_check_mark: Result: 以下のように表示されればOKです

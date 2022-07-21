@@ -10,7 +10,7 @@ cd ../ || exit               # REMOVE THIS IN aggregate.sh - cd to the git repos
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-git apply patches/***********.patch # <pre><code>でソースコードを表示
+git apply patches/1b41a5d.patch # <pre><code>...</code></pre> でソースコードを表示
 # ```
 
 # :white_check_mark: Result: 以下のように表示されればOKです
@@ -23,7 +23,7 @@ git apply patches/***********.patch # <pre><code>でソースコードを表示
 
 # ```shell
 (cd app && npm install prismjs)
-git apply patches/***********.patch # highlightElement + useRef
+git apply patches/295fa81.patch # highlightElement
 # ```
 
 # :white_check_mark: Result: App.tsxが以下のようになります。
@@ -84,7 +84,7 @@ npm install --save-dev @types/prismjs
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-git apply patches/***********.patch # import "prismjs/themes/prism-twilight.css"
+git apply patches/c35d06d.patch # import "prismjs/themes/prism-twilight.css";
 # ```
 
 # :white_check_mark: Result: 以下のように表示されればOKです
