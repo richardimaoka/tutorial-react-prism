@@ -1,0 +1,32 @@
+commit 39ddd537350f7f1146ee2c23b8410b76a88e44ed
+Author: Richard Imaoka <richard.e.imaoka@gmail.com>
+Date:   Thu Jul 21 09:01:57 2022 +0900
+
+    add babel config to package.json
+
+diff --git a/app/package.json b/app/package.json
+index 123d05e..424e20c 100644
+--- a/app/package.json
++++ b/app/package.json
+@@ -93,6 +93,21 @@
+   "babel": {
+     "presets": [
+       "react-app"
++    ],
++    "plugins": [
++      [
++        "prismjs",
++        {
++          "languages": [
++            "javascript"
++          ],
++          "plugins": [
++            "line-numbers"
++          ],
++          "theme": "twilight",
++          "css": true
++        }
++      ]
+     ]
+   },
+   "jest": {

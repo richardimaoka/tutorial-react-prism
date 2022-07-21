@@ -1,0 +1,36 @@
+commit 85e66b772825b43bbd7faede45426caa92492ab4
+Author: Richard Imaoka <richard.e.imaoka@gmail.com>
+Date:   Thu Jul 21 08:56:49 2022 +0900
+
+    add babel config to package.json , but it's not picked up as expected
+
+diff --git a/app/package.json b/app/package.json
+index 24b5f56..41e0e06 100644
+--- a/app/package.json
++++ b/app/package.json
+@@ -44,5 +44,25 @@
+   "devDependencies": {
+     "@types/prismjs": "^1.26.0",
+     "babel-plugin-prismjs": "^2.1.0"
++  },
++  "babel": {
++    "presets": [
++      "react-app"
++    ],
++    "plugins": [
++      [
++        "prismjs",
++        {
++          "languages": [
++            "javascript"
++          ],
++          "plugins": [
++            "line-numbers"
++          ],
++          "theme": "twilight",
++          "css": true
++        }
++      ]
++    ]
+   }
+ }

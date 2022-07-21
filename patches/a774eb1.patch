@@ -1,0 +1,17 @@
+commit a774eb1f560bad48449d6d91bff83912a871cf48
+Author: Richard Imaoka <richard.e.imaoka@gmail.com>
+Date:   Thu Jul 21 08:54:53 2022 +0900
+
+    remove import prism-twilight.css
+
+diff --git a/app/src/App.tsx b/app/src/App.tsx
+index 1f792f1..28e31f9 100644
+--- a/app/src/App.tsx
++++ b/app/src/App.tsx
+@@ -1,6 +1,5 @@
+ import Prism from "prismjs";
+ import { useEffect, useRef } from "react";
+-import "prismjs/themes/prism-twilight.css";
+ 
+ function App() {
+   const codeString = `import React from "react";

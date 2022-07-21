@@ -1,0 +1,41 @@
+commit 1b41a5de5c8b95755b411576ad86832e5119595b
+Author: Richard Imaoka <richard.e.imaoka@gmail.com>
+Date:   Wed Jul 6 00:42:13 2022 +0900
+
+    codeString
+
+diff --git a/app/src/App.tsx b/app/src/App.tsx
+index a5763d3..86e1e58 100644
+--- a/app/src/App.tsx
++++ b/app/src/App.tsx
+@@ -1,5 +1,29 @@
+ function App() {
+-  return <div>empty react application</div>;
++  const codeString = `import React from "react";
++import ReactDOM from "react-dom/client";
++import "./index.css";
++import App from "./App";
++import reportWebVitals from "./reportWebVitals";
++
++const root = ReactDOM.createRoot(
++  document.getElementById("root") as HTMLElement
++);
++root.render(
++  <React.StrictMode>
++    <App />
++  </React.StrictMode>
++);
++
++// If you want to start measuring performance in your app, pass a function
++// to log results (for example: reportWebVitals(console.log))
++// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
++reportWebVitals();
++`;
++  return (
++    <pre>
++      <code>{codeString}</code>
++    </pre>
++  );
+ }
+ 
+ export default App;
