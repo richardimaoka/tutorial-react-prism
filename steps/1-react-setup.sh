@@ -15,9 +15,9 @@ cd ../ || exit               # REMOVE THIS IN aggregate.sh - cd to the git repos
 
 # ```shell
 npx create-react-app app --template typescript
-npx prettier --write .
 # shellcheck disable=SC2164 # REMOVE THIS IN aggregate.sh
 cd app
+npx prettier --write .
 npm start
 # ```
 
