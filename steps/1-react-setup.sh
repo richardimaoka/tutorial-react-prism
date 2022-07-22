@@ -41,6 +41,6 @@ git apply patches/a12551c.patch # empty application
 
 # :white_check_mark: Result: 以下のように表示されればOKです
 
-# ![2022-05-06_21h29_54.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/ff80a767-9298-5fa0-c66a-f02ad9efe2a7.png)
+# ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/9ebdda45-b7b8-3af2-b838-0878ca4c42ef.png)
 
 # 上記の変更により、これ以降行うソースコード変更がわかりやすくなります。

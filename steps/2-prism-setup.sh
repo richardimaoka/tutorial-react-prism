@@ -15,7 +15,7 @@ git apply patches/1b41a5d.patch # <pre><code>...</code></pre> でソースコー
 
 # :white_check_mark: Result: 以下のように表示されればOKです
 
-# ![2022-07-20_09h11_44.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/07f77b7b-35b3-c4f6-89a5-d0ed49892101.png)
+# ![2022-07-22_08h50_55.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/9cfb4c6b-2222-565d-153b-0b71821c0d29.png)
 
 # ソースコードが白黒で表示されたので、次はprism.jsを使って色をつけていきます。
 
@@ -74,12 +74,22 @@ git apply patches/295fa81.patch # highlightElement
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
 # ```shell
-npm install --save-dev @types/prismjs
+(cd app && npm install --save-dev @types/prismjs)
 # ```
 
 # :white_check_mark: Result: エラーは解消されました。しかし、コードはまだsyntax highlightされません。
 
-# ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/ffe58180-312b-eb56-e4d3-65daa8e5d9db.png)
+# <details><summary>エラーが解消されない場合は？</summary><div>
+
+# Reactプロセスの再起動を試してください。本記事冒頭で立ち上げた、ReactのターミナルでをCtrl+Cを入力してプロセスを停止し、再び`npm start`で起動してください。
+
+# ![アートボード 3.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/577bc67d-b285-7a05-a15f-3bd8e190bcb0.png)
+
+# ---
+
+# </div></details>
+
+# ![2022-07-22_08h50_55.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/9cfb4c6b-2222-565d-153b-0b71821c0d29.png)
 
 # :large_orange_diamond: Action: 以下のコマンドを入力してください。
 
@@ -89,4 +99,10 @@ git apply patches/c35d06d.patch # import "prismjs/themes/prism-twilight.css";
 
 # :white_check_mark: Result: 以下のように表示されればOKです
 
-# ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/ffe58180-312b-eb56-e4d3-65daa8e5d9db.png)
+# ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75738/6cff8579-e87c-09c8-2be9-e09ab1ada5ee.png)
+
+# ## 参考文献・資料
+# - https://prismjs.com/
+# - Prism.js API doc https://prismjs.com/docs/
+# - Create React App https://create-react-app.dev/
+# - [Syntax Highlighting with Prismjs and React](https://dev.to/amitchauhan/syntax-highlighting-with-prismjs-and-react-1lep) 本記事とは違い、highlightAllを使っています
